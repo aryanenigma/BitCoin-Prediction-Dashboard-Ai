@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analytics — Model Visuals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="topbar">
+    <div class="brand">💹 BTC AI Dashboard</div>
+    <div class="navlinks">
+      <a href="index.html">Dashboard</a>
+      <a href="strategy.html">Strategy Tester</a>
+      <a href="analytics.html" class="active">Analytics</a>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container single-col">
+    <div class="card">
+      <h2>📈 Model Analytics</h2>
+      <p class="muted">Explore insights from the trained AI model — key features and sentiment impact on BTC prediction.</p>
+
+      <div class="analysis-container">
+        <div class="analysis-card">
+          <h3>Feature Importance</h3>
+          <img id="img-feature" src="" alt="Feature Importance Chart" class="analysis-img" />
+        </div>
+
+        <div class="analysis-card">
+          <h3>Sentiment Correlation</h3>
+          <img id="img-sentiment" src="" alt="Sentiment Correlation Chart" class="analysis-img" />
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;">
+        <button id="retrain-btn">🔄 Retrain Model</button>
+        <button id="refresh-visuals">♻️ Refresh Charts</button>
+      </div>
+      <p id="retrain-status" class="muted" style="margin-top:8px;"></p>
+    </div>
+  </main>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>

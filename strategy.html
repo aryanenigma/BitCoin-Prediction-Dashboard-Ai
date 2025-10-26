@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strategy Tester — Smart BTC Breakout</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lightweight-charts@4.0.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="topbar">
+    <div class="brand">💹 BTC AI Dashboard</div>
+    <div class="navlinks">
+      <a href="index.html">Dashboard</a>
+      <a href="strategy.html" class="active">Strategy Tester</a>
+      <a href="analytics.html">Analytics</a>
+    </div>
+    <div class="controls">
+      <button id="refresh-ai">🔄 Refresh</button>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTAINER ===== -->
+  <main class="container single-col">
+    <div class="card">
+      <h2>⚙️ Smart BTC Breakout Strategy</h2>
+      <p class="muted">
+        Rules: Max 2 trades/day • Profit Target 3–5% (default 4%) • Stop Loss 10–12% (default 10%) •
+        Entry: opposite candle breaks previous candle • Indicators: RSI + EMA21 • Filters: avoid range & near S/R
+      </p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+        <button id="simulate-btn">▶️ Run Strategy Simulation (10m)</button>
+        <div id="sim-status" class="muted">No simulation run yet</div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;">
+        <div class="card small"><strong>Initial</strong><div id="sim-initial">$0</div></div>
+        <div class="card small"><strong>Final</strong><div id="sim-final">$0</div></div>
+        <div class="card small"><strong>Return</strong><div id="sim-return">0%</div></div>
+        <div class="card small"><strong>Trades</strong><div id="sim-trades">0</div></div>
+        <div class="card small"><strong>Win Rate</strong><div id="sim-win">0%</div></div>
+      </div>
+
+      <!-- ===== Profit Projection ===== -->
+      <div class="card" style="margin-top:20px;">
+        <h3>📊 Profit Projection</h3>
+        <p class="muted">Shows expected gain/loss if executing trades as per your strategy.</p>
+        <div id="projection-summary">No data yet.</div>
+        <div id="projection-chart"></div>
+      </div>
+
+      <!-- ===== Main Charts ===== -->
+      <div id="strategy-chart" class="chart-area" style="margin-top:20px;height:360px;"></div>
+      <div id="rsi-chart" class="chart-area" style="margin-top:12px;height:140px;"></div>
+
+      <!-- ===== Trades Table ===== -->
+      <div id="strategy-trades-table" style="margin-top:16px;max-height:340px;overflow:auto;"></div>
+    </div>
+  </main>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>
