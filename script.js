@@ -2,7 +2,7 @@
 // script.js — Final Stable Version (BTC AI Dashboard + Custom Strategy)
 // ======================================================
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = window.location.origin;
 let chart = null;
 let candleSeries = null;
 const currentPage = window.location.pathname.split("/").pop();
@@ -486,3 +486,4 @@ async function initAnalyticsPage() {
 if (["index.html", "", "index"].includes(currentPage)) initDashboard();
 else if (["strategy.html", "strategy"].includes(currentPage)) initStrategyPage();
 else if (["analytics.html", "analytics"].includes(currentPage)) initAnalyticsPage();
+
